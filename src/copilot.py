@@ -26,7 +26,7 @@ def build_data_context(products, stores, inventory, sales):
 
     context = []
 
-    context.append("STORE SUMMARY")
+    context.append("STORE SUMMARY (Source: data/stores.csv)")
 
     for _, store in stores.iterrows():
         context.append(
@@ -40,7 +40,7 @@ def build_data_context(products, stores, inventory, sales):
         f"Total units sold: {int(sales['quantity'].sum())}"
     )
 
-    context.append("\nINVENTORY STATUS BY STORE")
+    context.append("\nINVENTORY STATUS BY STORE (Sources: data/products.csv, data/inventory.csv, data/sales.csv)")
 
     for _, row in stock.iterrows():
 
@@ -54,7 +54,7 @@ def build_data_context(products, stores, inventory, sales):
             f"Status: {row['status']}"
         )
 
-    context.append("\nTOP PRODUCTS BY SALES")
+    context.append("\nTOP PRODUCTS BY SALES (Source: data/sales.csv)")
 
     for _, row in performance.head(10).iterrows():
 
@@ -63,7 +63,7 @@ def build_data_context(products, stores, inventory, sales):
             f"{int(row['total_units_sold'])} units sold"
         )
 
-    context.append("\nSALES TRENDS")
+    context.append("\nSALES TRENDS (Source: data/sales.csv)")
 
     for _, row in trends.iterrows():
 
