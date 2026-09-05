@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Sales & Inventory Copilot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <div>
+                <h1>Retail Sales & Inventory Copilot</h1>
+                <p>AI-powered insights for smarter retail decisions</p>
+            </div>
+            <div class="status">
+                <span class="dot"></span>
+                System Online
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Dashboard Cards -->
+            <section class="stats">
+
+                <div class="card">
+                    <div class="card-title">Products</div>
+                    <div class="card-value" id="products">-</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Stores</div>
+                    <div class="card-value" id="stores">-</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Units Sold</div>
+                    <div class="card-value" id="units">-</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Items Needing Attention</div>
+                    <div class="card-value warning" id="attention">-</div>
+                </div>
+
+            </section>
+
+
+            <!-- Copilot -->
+            <section class="copilot">
+
+                <h2>Ask the Retail Copilot</h2>
+
+                <p class="subtitle">
+                    Ask questions about sales, inventory and products using natural language.
+                </p>
+
+                <div class="question-box">
+                    <input
+                        type="text"
+                        id="question"
+                        placeholder="Example: Which products are likely to run out?"
+                    >
+
+                    <button onclick="askQuestion()">
+                        Ask Copilot
+                    </button>
+                </div>
+
+                <div class="quick-questions">
+
+                    <button onclick="setQuestion('Which products are likely to run out?')">
+                        Stock-out risks
+                    </button>
+
+                    <button onclick="setQuestion('Which products are overstocked?')">
+                        Overstock
+                    </button>
+
+                    <button onclick="setQuestion('Which products are selling the most?')">
+                        Top products
+                    </button>
+
+                    <button onclick="setQuestion('Which products have unusual sales changes?')">
+                        Sales trends
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Attention -->
+            <section class="dashboard-grid">
+
+                <div class="panel">
+                    <h2>🔴 Stock-out Risks</h2>
+                    <div id="stockout">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>📦 Overstock</h2>
+                    <div id="overstock">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>📈 Sales Spikes</h2>
+                    <div id="spikes">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>📉 Sales Drops</h2>
+                    <div id="drops">
+                        Loading...
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Copilot Response -->
+            <section class="response-panel" id="responsePanel">
+
+                <h2>🤖 Copilot Response</h2>
+
+                <div id="response">
+                    Ask a question above to get an evidence-based recommendation.
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Retail Intelligence • Grounded in business data • Human decision support</p>
+        </footer>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
