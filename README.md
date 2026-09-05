@@ -39,17 +39,16 @@ inventory figures. Gemini is then used to reason over the verified data
 and present the results in a manager-friendly format.
 
 
+## Demo video link:
+https://drive.google.com/file/d/1HJjCoIg4xfHrQCPOThlBfgM5p1CoIK-P/view?usp=drivesdk
 
 \## How to run
 
-
-
 \### Install dependencies
 
-## Demo video link:
-https://drive.google.com/file/d/1HJjCoIg4xfHrQCPOThlBfgM5p1CoIK-P/view?usp=drivesdk
+Open PowerShell in the project folder and run:
+
 
 ```bash
 
 pip install -r requirements.txt
-
